@@ -1,4 +1,3 @@
-import * as React from 'react';
 
 import type { ToastActionElement, ToastProps } from '@/components/ui/toast';
 
@@ -18,7 +17,7 @@ const actionTypes = {
   DISMISS_TOAST: 'DISMISS_TOAST',
   REMOVE_TOAST: 'REMOVE_TOAST',
 } as const;
-
+console.log(actionTypes.ADD_TOAST);import * as React from 'react';
 let count = 0;
 
 function genId() {

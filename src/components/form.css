@@ -1,0 +1,72 @@
+.minimized-icon {
+  position: absolute;
+  top: 20px;
+  left: 140%;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Make the main circle circular */
+  cursor: pointer;
+  animation: pulsatingEffect 2s infinite ease-in-out; /* Pulsating animation */
+  position: relative;
+  background: linear-gradient(90deg, #808080, #ffffff, #80d0ff);
+  background-size: 200% 200%; /* Set a large size to animate it */
+  animation: movingGradient 4s ease-in-out infinite; /* Animation for gradient movement */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Soft glow around icon */
+}
+
+.minimized-icon:hover {
+  opacity: 0.8;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: white; /* Icon color */
+  z-index: 2; /* Keep the icon on top */
+}
+
+.minimized-icon::before {
+  content: '';
+  position: absolute;
+  top: 5px; /* Position the smaller circle inside the gradient circle */
+  left: 5px; /* Position the smaller circle inside the gradient circle */
+  width: 40px; /* Smaller than the main circle */
+  height: 40px; /* Smaller than the main circle */
+  background-color: white; /* White circle */
+  border-radius: 50%; /* Make it circular */
+  z-index: 1; /* White circle sits between the icon and gradient */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); /* Soft white glow */
+}
+
+/* Pulsating animation for the whole icon (gradient + white circle + icon) */
+@keyframes pulsatingEffect {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.7), 0 0 50px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Moving gradient effect */
+@keyframes movingGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
